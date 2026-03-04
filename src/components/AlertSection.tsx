@@ -7,8 +7,8 @@ export default function AlertSection() {
                 </div>
                 <h2 className="alert-title">A LEI DA INVISIBILIDADE</h2>
                 <p className="alert-quote">
-                    "Quem não é visto, não é respeitado. Enquanto você lê isso, seu concorrente está roubando o cliente que
-                    deveria ser seu porque o site dele carrega em 1 segundo e o seu nem existe."
+                    &quot;Quem n&atilde;o &eacute; visto, n&atilde;o &eacute; respeitado. Enquanto voc&ecirc; l&ecirc; isso, seu concorrente est&aacute; roubando o cliente que
+                    deveria ser seu porque o site dele carrega em 1 segundo e o seu nem existe.&quot;
                 </p>
                 <div className="alert-footer">
                     <i className="fas fa-exclamation-triangle"></i> O SILÊNCIO DO SEU FATURAMENTO É O BARULHO DO LUCRO DELES.
