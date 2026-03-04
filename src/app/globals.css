@@ -815,6 +815,21 @@ section {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: var(--shadow-md);
     position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.showcase-card.expanded {
+    transform: scale(1.65) !important;
+    z-index: 100;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.95), 0 0 40px var(--accent-green-glow) !important;
+    border-color: var(--accent-green) !important;
+}
+
+@media (max-width: 768px) {
+    .showcase-card.expanded {
+        transform: scale(1.05) !important;
+    }
 }
 
 .showcase-card::before {

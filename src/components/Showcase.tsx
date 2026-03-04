@@ -1,4 +1,10 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Showcase() {
+    const [expandedId, setExpandedId] = useState<string | null>(null);
+
     const styles = [
         {
             id: "technoir",
@@ -130,7 +136,12 @@ export default function Showcase() {
 
                 <div className="showcase-grid">
                     {styles.map((style) => (
-                        <div key={style.id} className="showcase-card">
+                        <div
+                            key={style.id}
+                            className={`showcase-card ${expandedId === style.id ? 'expanded' : ''}`}
+                            onClick={() => setExpandedId(expandedId === style.id ? null : style.id)}
+                            onMouseLeave={() => setExpandedId(null)}
+                        >
                             <div className={`showcase-preview ${style.previewClass}`}>
                                 <div className="style-tag" style={{ background: style.tagBg, color: style.tagColor }}>
                                     {style.tag}
