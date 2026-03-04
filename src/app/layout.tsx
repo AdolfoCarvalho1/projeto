@@ -16,7 +16,11 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "MÉTODO AC23 | Guerra Digital para Pequenos Negócios",
   description: "O Método AC23 é uma estrutura de guerra digital para pequenos negócios que querem dominar o Google e parar de depender de indicação.",
-  viewport: "width=device-width, initial-scale=1.0",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
 };
 
 export default function RootLayout({
