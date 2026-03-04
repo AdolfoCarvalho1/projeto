@@ -8,6 +8,7 @@ export default function Showcase() {
     const styles = [
         {
             id: "technoir",
+            image: "/showcase/showcase_technoir_1772650678975.png",
             tag: "DETERMINANTE",
             tagBg: "var(--accent-green)",
             tagColor: "#000",
@@ -37,6 +38,7 @@ export default function Showcase() {
         },
         {
             id: "minimal",
+            image: "/showcase/showcase_minimal_1772650696085.png",
             tag: "ESSENCIAL",
             tagBg: "#fff",
             tagColor: "#000",
@@ -65,6 +67,7 @@ export default function Showcase() {
         },
         {
             id: "glass",
+            image: "/showcase/showcase_glass_1772650715171.png",
             tag: "ELITE",
             tagBg: "rgba(255,255,255,0.2)",
             tagColor: "#fff",
@@ -90,6 +93,7 @@ export default function Showcase() {
         },
         {
             id: "corporate",
+            image: "/showcase/showcase_corporate_1772650735168.png",
             tag: "BLINDADO",
             tagBg: "#0056b3",
             tagColor: "#fff",
@@ -142,11 +146,45 @@ export default function Showcase() {
                             onClick={() => setExpandedId(expandedId === style.id ? null : style.id)}
                             onMouseLeave={() => setExpandedId(null)}
                         >
-                            <div className={`showcase-preview ${style.previewClass}`}>
+                            <div className={`showcase-preview ${style.previewClass} ${expandedId === style.id ? 'preview-expanded' : ''}`}>
                                 <div className="style-tag" style={{ background: style.tagBg, color: style.tagColor }}>
                                     {style.tag}
                                 </div>
-                                {style.mockup}
+                                {expandedId === style.id ? (
+                                    <div className="expanded-content fade-in">
+                                        <div className="expanded-nav-real">
+                                            <div className={`mini-logo ${style.id}`}></div>
+                                            <div className="expanded-nav-links">
+                                                <span>Início</span>
+                                                <span>Serviços</span>
+                                                <span>Contato</span>
+                                            </div>
+                                            <div className="expanded-nav-cta" style={{ background: style.tagBg, color: style.tagColor }}>Ação</div>
+                                        </div>
+                                        <div className="expanded-hero-real">
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                                            <img src={style.image} alt={style.title} className="expanded-hero-img" />
+                                            <div className="expanded-hero-overlay">
+                                                <div className="expanded-line-title"></div>
+                                                <div className="expanded-line-sub"></div>
+                                                <div className="expanded-btn" style={{ background: style.tagBg }}></div>
+                                            </div>
+                                        </div>
+                                        <div className="expanded-body-real">
+                                            <div className="expanded-section-title"></div>
+                                            <div className="expanded-grid-real">
+                                                <div className="expanded-feature-card"></div>
+                                                <div className="expanded-feature-card"></div>
+                                                <div className="expanded-feature-card"></div>
+                                            </div>
+                                        </div>
+                                        <div className="expanded-chat-widget">
+                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="currentColor" /></svg>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    style.mockup
+                                )}
                             </div>
                             <div className="showcase-info">
                                 <h4>{style.title}</h4>
